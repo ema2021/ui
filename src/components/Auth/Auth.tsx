@@ -233,7 +233,7 @@ function SocialAuth({
               type="secondary"
               className={AuthStyles['sbui-auth-label']}
             >
-              Sign in with
+              Connectez-vous avec
             </Typography.Text>
             <Space size={2} direction={socialLayout}>
               {providers.map((provider) => {
@@ -255,14 +255,14 @@ function SocialAuth({
                       onClick={() => handleProviderSignIn(provider)}
                       className="flex items-center"
                     >
-                      {verticalSocialLayout && 'Sign up with ' + provider}
+                      {verticalSocialLayout && 'Connectez-vous avec ' + provider}
                     </Button>
                   </div>
                 )
               })}
             </Space>
           </Space>
-          {!onlyThirdPartyProviders && <Divider>or continue with</Divider>}
+          {!onlyThirdPartyProviders && <Divider>ou continuer avec</Divider>}
         </React.Fragment>
       )}
     </Space>
@@ -358,7 +358,7 @@ function EmailAuth({
       <Space size={6} direction={'vertical'}>
         <Space size={3} direction={'vertical'}>
           <Input
-            label="Email address"
+            label="Email :"
             autoComplete="email"
             defaultValue={email}
             icon={<IconMail size={21} stroke={'#666666'} />}
@@ -367,7 +367,7 @@ function EmailAuth({
             }
           />
           <Input
-            label="Password"
+            label="Mot de passe :"
             type="password"
             defaultValue={password}
             autoComplete="current-password"
@@ -407,7 +407,7 @@ function EmailAuth({
             loading={loading}
             block
           >
-            {authView === VIEWS.SIGN_IN ? 'Sign in' : 'Sign up'}
+            {authView === VIEWS.SIGN_IN ? "Se connecter" : "S'inscrire"}
           </Button>
         </Space>
         <Space direction="vertical" style={{ textAlign: 'center' }}>
@@ -430,7 +430,7 @@ function EmailAuth({
                 handleViewChange(VIEWS.SIGN_UP)
               }}
             >
-              Don't have an account? Sign up
+              Vous n'avez pas de compte ? Enregistrez-vous
             </Typography.Link>
           ) : (
             <Typography.Link
@@ -440,7 +440,7 @@ function EmailAuth({
                 handleViewChange(VIEWS.SIGN_IN)
               }}
             >
-              Do you have an account? Sign in
+              Vous avez un compte ? Se connecter
             </Typography.Link>
           )}
           {message && <Typography.Text>{message}</Typography.Text>}
@@ -564,7 +564,7 @@ function ForgottenPassword({
             icon={<IconInbox size={21} />}
             loading={loading}
           >
-            Send reset password instructions
+            Envoyer les instructions de réinitialisation du mot de passe
           </Button>
         </Space>
         <Typography.Link
@@ -574,7 +574,7 @@ function ForgottenPassword({
             setAuthView(VIEWS.SIGN_IN)
           }}
         >
-          Go back to sign in
+         Retourner pour se connecter
         </Typography.Link>
         {message && <Typography.Text>{message}</Typography.Text>}
         {error && <Typography.Text type="danger">{error}</Typography.Text>}
@@ -609,8 +609,8 @@ function UpdatePassword({
       <Space size={4} direction={'vertical'}>
         <Space size={3} direction={'vertical'}>
           <Input
-            label="New password"
-            placeholder="Enter your new password"
+            label="Nouveau mot de passe"
+            placeholder="Entrez votre nouveau mot de passe"
             type="password"
             icon={<IconKey size={21} stroke={'#666666'} />}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
